@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Janakpur Sweets – Authentic Mithila sweets, samosa, kachori, chaat and more in Baneshwor, Kathmandu. Taste of Mithila, Heart of Kathmandu." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Janakpur Sweets – Taste of Mithila, Heart of Kathmandu" />
+  <meta property="og:description" content="Fresh samosa, kachori, rasmalai and authentic Mithila mithai in Baneshwor, Kathmandu." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Janakpur Sweets – Taste of Mithila, Heart of Kathmandu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">🍮</span>
+        <span class="logo-text">Janakpur <span class="logo-accent">Sweets</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"    class="nav-link">Home</a></li>
+        <li><a href="#menu"    class="nav-link">Menu</a></li>
+        <li><a href="#order"   class="nav-link">Order</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#about"   class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════ HERO ══ -->
+  <section class="hero" id="home">
+
+    <!-- Floating background emojis -->
+    <div class="floating-emoji" style="left:4%;top:18%;">🥟</div>
+    <div class="floating-emoji" style="left:16%;top:72%;">🍮</div>
+    <div class="floating-emoji" style="left:29%;top:42%;">🌶️</div>
+    <div class="floating-emoji" style="left:47%;top:82%;">🫕</div>
+    <div class="floating-emoji" style="left:61%;top:22%;">🍯</div>
+    <div class="floating-emoji" style="left:72%;top:63%;">🧁</div>
+    <div class="floating-emoji" style="left:84%;top:38%;">🥟</div>
+    <div class="floating-emoji" style="left:91%;top:74%;">🍮</div>
+    <div class="floating-emoji" style="left:9%;top:88%;">🌶️</div>
+    <div class="floating-emoji" style="left:54%;top:56%;">🫕</div>
+    <div class="floating-emoji" style="left:77%;top:12%;">🍯</div>
+    <div class="floating-emoji" style="left:38%;top:12%;">🥟</div>
+
+    <div class="hero-split">
+      <!-- Left half -->
+      <div class="hero-left">
+        <div class="hero-left-inner">
+          <p class="hero-subtitle">Authentic Mithila Flavours · Kathmandu</p>
+          <h1 class="hero-title">Janakpur<br /><span class="hero-title-accent">Sweets</span></h1>
+          <p class="hero-tagline-wrap">
+            <span class="hero-tagline" id="heroTagline"></span><span class="cursor" id="typeCursor"></span>
+          </p>
+          <div class="rating-badge" id="ratingBadge">
+            <span class="rating-star">⭐</span>
+            <span class="rating-number" id="ratingNumber">0.0</span>
+            <span class="rating-label">/ 5 &nbsp;·&nbsp; 33 Reviews</span>
+          </div>
+          <a href="#order" class="btn-primary hero-cta">Order Now 🛒</a>
+        </div>
+      </div>
+
+      <!-- Right half – decorative food display -->
+      <div class="hero-right">
+        <div class="food-display">
+          <div class="food-plate">
+            <div class="plate-ring plate-ring-outer"></div>
+            <div class="plate-ring plate-ring-mid"></div>
+            <div class="plate-ring plate-ring-inner"></div>
+            <div class="plate-center">
+              <span class="plate-emoji">🥟</span>
+            </div>
+          </div>
+          <div class="food-orbit food-orbit-1"><span class="food-orb">🍮</span></div>
+          <div class="food-orbit food-orbit-2"><span class="food-orb">🌶️</span></div>
+          <div class="food-orbit food-orbit-3"><span class="food-orb">🍯</span></div>
+          <div class="food-orbit food-orbit-4"><span class="food-orb">🫕</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marquee strip -->
+    <div class="marquee-strip">
+      <div class="marquee-track">
+        <span>🥟 Best Samosa in Town</span>
+        <span class="marquee-dot">·</span>
+        <span>🍮 Fresh Mithai Daily</span>
+        <span class="marquee-dot">·</span>
+        <span>⭐ 4.1 Rated</span>
+        <span class="marquee-dot">·</span>
+        <span>🌶️ Authentic Mithila Taste</span>
+        <span class="marquee-dot">·</span>
+        <span>🫕 Samosa Tarkari</span>
+        <span class="marquee-dot">·</span>
+        <span>🍯 Sweet &amp; Fresh</span>
+        <span class="marquee-dot">·</span>
+        <span>🥟 Best Samosa in Town</span>
+        <span class="marquee-dot">·</span>
+        <span>🍮 Fresh Mithai Daily</span>
+        <span class="marquee-dot">·</span>
+        <span>⭐ 4.1 Rated</span>
+        <span class="marquee-dot">·</span>
+        <span>🌶️ Authentic Mithila Taste</span>
+        <span class="marquee-dot">·</span>
+        <span>🫕 Samosa Tarkari</span>
+        <span class="marquee-dot">·</span>
+        <span>🍯 Sweet &amp; Fresh</span>
+        <span class="marquee-dot">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ ABOUT ══ -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">About Janakpur Sweets</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text-block fade-in">
+          <div class="about-icon-big">🍮</div>
+          <p class="about-lead">
+            Nestled in the heart of Baneshwor, Kathmandu, <strong>Janakpur Sweets</strong> brings the
+            authentic, time-honoured taste of Mithila right to your neighbourhood.
+          </p>
+          <p class="about-body">
+            Every day, our kitchen fills with the aroma of freshly fried samosas, golden jalebis, and
+            hand-crafted mithai made from recipes passed down through generations. We believe great food
+            starts with fresh ingredients, prepared with love and served with a smile.
+          </p>
+          <p class="about-body">
+            Our cooperative staff and welcoming owner ensure every visit feels like coming home.
+            Whether you're grabbing a quick samosa on the way to work or picking up a box of assorted
+            mithai for a celebration — you'll always find something irresistible here.
+          </p>
+        </div>
+        <div class="about-stats fade-in">
+          <div class="stat-card"><span class="stat-num">4.1⭐</span><span class="stat-label">Google Rating</span></div>
+          <div class="stat-card"><span class="stat-num">33+</span><span class="stat-label">Happy Reviews</span></div>
+          <div class="stat-card"><span class="stat-num">Daily</span><span class="stat-label">Fresh Prep</span></div>
+          <div class="stat-card"><span class="stat-num">Open</span><span class="stat-label">Every Day</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MENU ══ -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Our Menu</span>
+        <h2 class="section-title">Fresh &amp; Delicious</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Made fresh daily — straight from Mithila tradition to your plate</p>
+      </div>
+
+      <h3 class="menu-category-title fade-in">🥟 Snacks &amp; Street Food</h3>
+      <div class="menu-grid">
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🥟</div>
+          <div class="bestseller-badge">BESTSELLER</div>
+          <h4 class="menu-card-name">Samosa</h4>
+          <p class="menu-card-desc">Crispy golden pastry stuffed with spiced potatoes and peas. The talk of Kathmandu!</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 25</span>
+            <button class="btn-add" onclick="addToOrderFromCard('samosa')">Add to Order</button>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🫓</div>
+          <h4 class="menu-card-name">Kachori</h4>
+          <p class="menu-card-desc">Flaky, deep-fried pastry shells filled with savoury lentil and spice mixture.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 20</span>
+            <button class="btn-add" onclick="addToOrderFromCard('kachori')">Add to Order</button>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🥗</div>
+          <h4 class="menu-card-name">Mix Chaat</h4>
+          <p class="menu-card-desc">A tangy, spicy medley of chickpeas, potatoes, chutneys and crunchy toppings.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 80</span>
+            <button class="btn-add" onclick="addToOrderFromCard('mixchaat')">Add to Order</button>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🫕</div>
+          <h4 class="menu-card-name">Veg Momo</h4>
+          <p class="menu-card-desc">Steamed dumplings packed with fresh vegetables and served with spicy achar.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 120</span>
+            <button class="btn-add" onclick="addToOrderFromCard('vegmomo')">Add to Order</button>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🍲</div>
+          <h4 class="menu-card-name">Samosa Tarkari</h4>
+          <p class="menu-card-desc">Samosas dunked in a rich, spiced gravy — a hearty street-food favourite.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 60</span>
+            <button class="btn-add" onclick="addToOrderFromCard('samosatarkari')">Add to Order</button>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🍩</div>
+          <h4 class="menu-card-name">Jalebi</h4>
+          <p class="menu-card-desc">Crispy spirals soaked in saffron syrup — sweet, sticky, and absolutely divine.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 80 <small>/ 100g</small></span>
+            <button class="btn-add" onclick="addToOrderFromCard('jalebi')">Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="menu-category-title fade-in" style="margin-top:3.5rem;">🍮 Traditional Sweets (Mithai)</h3>
+      <div class="menu-grid">
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🍮</div>
+          <h4 class="menu-card-name">Rasmalai</h4>
+          <p class="menu-card-desc">Soft cottage cheese patties soaked in creamy, cardamom-infused milk. Pure bliss.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 60 <small>/ piece</small></span>
+            <button class="btn-add" onclick="addToOrderFromCard('rasmalai')">Add to Order</button>
+          </div>
+        </div>
+        <div class="menu-card fade-in">
+          <div class="menu-card-emoji">🍯</div>
+          <h4 class="menu-card-name">Mithai Assortment</h4>
+          <p class="menu-card-desc">A curated selection of our finest traditional sweets — perfect for gifting.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rs 200 <small>/ 250g</small></span>
+            <button class="btn-add" onclick="addToOrderFromCard('mithaiassortment')">Add to Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ ORDER ══ -->
+  <section class="section order-section" id="order">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Order Online</span>
+        <h2 class="section-title">Build Your Order</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">Select items, fill your details, and we'll connect you on WhatsApp!</p>
+      </div>
+
+      <div class="order-layout">
+        <!-- Left: Menu Selection Panel -->
+        <div class="menu-panel fade-in">
+          <h3 class="panel-heading">🛒 Build Your Order</h3>
+
+          <div class="order-category">
+            <div class="order-category-label">🥟 Snacks &amp; Street Food</div>
+            <div id="orderSnacks" class="order-items-list"></div>
+          </div>
+
+          <div class="order-category">
+            <div class="order-category-label">🍮 Traditional Sweets (Mithai)</div>
+            <div id="orderSweets" class="order-items-list"></div>
+          </div>
+        </div>
+
+        <!-- Right: Receipt Panel -->
+        <div class="receipt-panel fade-in">
+          <div class="receipt-header">
+            <div class="receipt-shop-name">JANAKPUR SWEETS</div>
+            <div class="receipt-shop-addr">Baneshwor, Kathmandu · 984-3588927</div>
+            <div class="receipt-dashes"></div>
+          </div>
+
+          <h3 class="panel-heading">🧾 Your Receipt</h3>
+          <div class="receipt-lines" id="receiptLines">
+            <div class="receipt-empty">Your order is empty. Add items from the menu! 🥟</div>
+          </div>
+          <div class="receipt-total-row" id="receiptTotalRow" style="display:none;">
+            <div class="receipt-dashes"></div>
+            <div class="receipt-total-line">
+              <span>TOTAL</span>
+              <span id="receiptTotal">Rs 0</span>
+            </div>
+          </div>
+
+          <div class="receipt-dashes" style="margin-top:1.5rem;"></div>
+
+          <div class="order-form">
+            <div class="form-group">
+              <label class="form-label" for="customerName">Your Name <span class="required">*</span></label>
+              <input type="text" id="customerName" class="form-input" placeholder="e.g. Ramesh Shrestha" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="specialInstructions">Special Instructions <span class="optional">(optional)</span></label>
+              <textarea id="specialInstructions" class="form-textarea" placeholder="Any special requests? (e.g. extra chutney, less spicy)" rows="3"></textarea>
+            </div>
+            <div id="orderError" class="order-error" style="display:none;"></div>
+            <button class="whatsapp-btn" id="whatsappBtn" onclick="handleWhatsAppOrder()">
+              📲 Order via WhatsApp
+            </button>
+            <p class="whatsapp-note">You'll be redirected to WhatsApp to confirm your order.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ WHY US ══ -->
+  <section class="section why-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Why Us</span>
+        <h2 class="section-title">Why Janakpur Sweets?</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon">🥟</div>
+          <h3 class="why-title">Best Samosa in Town</h3>
+          <p class="why-desc">Voted by locals again and again — our samosas are the gold standard in Kathmandu.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🌿</div>
+          <h3 class="why-title">Fresh Daily</h3>
+          <p class="why-desc">Every item is prepared fresh every single day. No stale stock, ever.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">💰</div>
+          <h3 class="why-title">Affordable Prices</h3>
+          <p class="why-desc">Premium taste at prices that make you smile. Great food shouldn't break the bank.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">❤️</div>
+          <h3 class="why-title">Authentic Mithila Taste</h3>
+          <p class="why-desc">Recipes rooted in Mithila tradition, lovingly brought to the heart of Kathmandu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ REVIEWS ══ -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Customer Love</span>
+        <h2 class="section-title">What People Say</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="carousel-wrapper" id="reviewCarouselWrapper">
+        <div class="carousel-track" id="reviewTrack"></div>
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous review">&#8249;</button>
+        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next review">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ CONTACT ══ -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag">Find Us</span>
+        <h2 class="section-title">Visit &amp; Contact</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info fade-in">
+          <div class="contact-card">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>M8QP+44P, Baneshwor,<br />Kathmandu 44600, Nepal</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:9843588927" class="contact-link">984-3588927</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">💬</span>
+              <div>
+                <strong>WhatsApp Order</strong>
+                <p><a href="https://wa.me/9779843588927" class="contact-link whatsapp-link" target="_blank" rel="noopener">+977 984-3588927</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🕐</span>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Open Daily · Closes 7 PM</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">⭐</span>
+              <div>
+                <strong>Google Rating</strong>
+                <p>4.1 / 5 &nbsp;(33 Reviews)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-map fade-in">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.5!2d85.338!3d27.701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a7f25e0b31%3A0x1!2sBaneshwor%2C%20Kathmandu!5e0!3m2!1sen!2snp!4v1700000000001!5m2!1sen!2snp"
+            width="100%" height="360" style="border:0;border-radius:16px;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Janakpur Sweets location – Baneshwor, Kathmandu"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🍮 Janakpur Sweets</div>
+          <p class="footer-tagline">Taste of Mithila, Heart of Kathmandu</p>
+          <p class="footer-copy">&copy; 2025 Janakpur Sweets. All rights reserved.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:9843588927">📞 984-3588927</a></li>
+            <li><a href="https://wa.me/9779843588927" target="_blank" rel="noopener">💬 WhatsApp Order</a></li>
+            <li>📍 Baneshwor, Kathmandu</li>
+            <li>🕐 Open Daily · Closes 7 PM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
