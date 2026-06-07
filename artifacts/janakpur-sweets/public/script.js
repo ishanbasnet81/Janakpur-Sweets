@@ -244,7 +244,7 @@ const REVIEWS = [
   nextBtn.addEventListener('click', () => { next(); resetAuto(); });
   prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
 
-  function startAuto() { autoTimer = setInterval(next, 3500); }
+  function startAuto() { autoTimer = setInterval(next, 6000); }
   function stopAuto()  { clearInterval(autoTimer); }
   function resetAuto() { stopAuto(); startAuto(); }
 
@@ -362,34 +362,32 @@ function renderReceipt() {
 
 /* WhatsApp order handler */
 function handleWhatsAppOrder() {
-  const btn         = document.getElementById('whatsappBtn');
-  const errorEl     = document.getElementById('orderError');
-  const nameInput   = document.getElementById('customerName');
-  const notesInput  = document.getElementById('specialInstructions');
+  const btn           = document.getElementById('whatsappBtn');
+  const errorEl       = document.getElementById('orderError');
+  const nameInput     = document.getElementById('customerName');
+  const locationInput = document.getElementById('deliveryLocation');
+  const notesInput    = document.getElementById('specialInstructions');
 
   if (!btn || !errorEl || !nameInput) return;
 
-  const name  = nameInput.value.trim();
-  const notes = notesInput ? notesInput.value.trim() : '';
+  const name     = nameInput.value.trim();
+  const location = locationInput ? locationInput.value.trim() : '';
+  const notes    = notesInput ? notesInput.value.trim() : '';
   const activeItems = MENU_ITEMS.filter(i => quantities[i.id] > 0);
 
   /* Validation */
-  if (activeItems.length === 0 || !name) {
-    let msg = '';
-    if (!name && activeItems.length === 0) {
-      msg = 'Please add at least one item and enter your name to continue.';
-    } else if (!name) {
-      msg = 'Please enter your name to continue.';
-    } else {
-      msg = 'Please add at least one item to your order before proceeding.';
-    }
+  const missing = [];
+  if (activeItems.length === 0) missing.push('at least one item');
+  if (!name)                    missing.push('your name');
+  if (!location)                missing.push('your delivery location');
 
-    errorEl.textContent = msg;
+  if (missing.length > 0) {
+    errorEl.textContent = `Please provide ${missing.join(', ')} to continue.`;
     errorEl.style.display = 'block';
 
     /* Shake the button */
     btn.classList.remove('btn-shake');
-    void btn.offsetWidth; /* force reflow to restart animation */
+    void btn.offsetWidth;
     btn.classList.add('btn-shake');
     btn.addEventListener('animationend', () => btn.classList.remove('btn-shake'), { once: true });
     return;
@@ -412,8 +410,10 @@ function handleWhatsAppOrder() {
   const message =
     `🛒 *New Order — Janakpur Sweets*\n\n` +
     `👤 Name: ${name}\n\n` +
+    `📍 Delivery Location: ${location}\n` +
+    `_(Delivery charges will be applied based on distance)_\n\n` +
     `📋 Order Details:${orderLines}\n\n` +
-    `💰 Total: Rs ${total}\n\n` +
+    `💰 Food Total: Rs ${total}\n\n` +
     `📝 Special Instructions: ${notes || 'None'}\n\n` +
     `_(Sent from janakpursweets.com)_`;
 
