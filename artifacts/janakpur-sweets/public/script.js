@@ -221,6 +221,14 @@ const REVIEWS = [
     track.appendChild(card);
   });
 
+  /* Size all cards to wrapper width (pixel-based for correct translateX) */
+  function sizeCards() {
+    const w = wrapper.offsetWidth;
+    track.querySelectorAll('.review-card').forEach(c => { c.style.width = w + 'px'; });
+  }
+  sizeCards();
+  window.addEventListener('resize', () => { sizeCards(); goTo(current); });
+
   /* Build dots */
   REVIEWS.forEach((_, i) => {
     const dot = document.createElement('button');
@@ -230,9 +238,11 @@ const REVIEWS = [
     dotsWrap.appendChild(dot);
   });
 
+  /* goTo uses pixel offset so exactly one card advances per step */
   function goTo(index) {
     current = (index + REVIEWS.length) % REVIEWS.length;
-    track.style.transform = `translateX(-${current * 100}%)`;
+    const cardW = wrapper.offsetWidth;
+    track.style.transform = `translateX(${-current * cardW}px)`;
     dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
       d.classList.toggle('active', i === current);
     });
