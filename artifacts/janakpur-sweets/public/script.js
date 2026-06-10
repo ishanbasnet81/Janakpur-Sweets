@@ -7,74 +7,140 @@
    DATA — Menu Items
    ════════════════════════════════════════════ */
 const MENU_ITEMS = [
-  { id: 'samosa',          name: 'Samosa',            emoji: '🥟', price: 25,  category: 'snacks',  priceLabel: 'Rs 25' },
-  { id: 'kachori',         name: 'Kachori',           emoji: '🫓', price: 20,  category: 'snacks',  priceLabel: 'Rs 20' },
-  { id: 'mixchaat',        name: 'Mix Chaat',         emoji: '🥗', price: 80,  category: 'snacks',  priceLabel: 'Rs 80' },
-  { id: 'vegmomo',         name: 'Veg Momo',          emoji: '🫕', price: 120, category: 'snacks',  priceLabel: 'Rs 120' },
-  { id: 'samosatarkari',   name: 'Samosa Tarkari',    emoji: '🍲', price: 60,  category: 'snacks',  priceLabel: 'Rs 60' },
-  { id: 'jalebi',          name: 'Jalebi',            emoji: '🍩', price: 80,  category: 'snacks',  priceLabel: 'Rs 80/100g' },
-  { id: 'rasmalai',        name: 'Rasmalai',          emoji: '🍮', price: 60,  category: 'sweets',  priceLabel: 'Rs 60/pc' },
-  { id: 'mithaiassortment',name: 'Mithai Assortment', emoji: '🍯', price: 200, category: 'sweets',  priceLabel: 'Rs 200/250g' },
+  {
+    id: "samosa",
+    name: "Samosa",
+    emoji: "🥟",
+    image: "public/samosa.png",
+    price: 25,
+    category: "snacks",
+    priceLabel: "Rs 25",
+  },
+  {
+    id: "kachori",
+    name: "Kachori",
+    emoji: "🫓",
+    image: "public/kachori.png",
+    price: 20,
+    category: "snacks",
+    priceLabel: "Rs 20",
+  },
+  {
+    id: "mixchaat",
+    name: "Mix Chaat",
+    image: "public/chaat.png",
+    emoji: "🥗",
+    price: 80,
+    category: "snacks",
+    priceLabel: "Rs 80",
+  },
+  {
+    id: "vegmomo",
+    name: "Veg Momo",
+    emoji: "🫕",
+    image: "public/momo.png",
+    price: 120,
+    category: "snacks",
+    priceLabel: "Rs 120",
+  },
+  {
+    id: "samosatarkari",
+    name: "Samosa Tarkari",
+    emoji: "🍲",
+    image: "public/tarkari.png",
+    price: 60,
+    category: "snacks",
+    priceLabel: "Rs 60",
+  },
+  {
+    id: "jalebi",
+    name: "Jalebi",
+    emoji: "🍩",
+    image: "public/jalebi.png",
+    price: 80,
+    category: "snacks",
+    priceLabel: "Rs 80/100g",
+  },
+  {
+    id: "rasmalai",
+    name: "Rasmalai",
+    emoji: "🍮",
+    image: "public/rasmalai.png",
+    price: 60,
+    category: "sweets",
+    priceLabel: "Rs 60/pc",
+  },
+  {
+    id: "mithaiassortment",
+    name: "Mithai Assortment",
+    emoji: "🍯",
+    image: "public/mithaiassortment.png",
+    price: 200,
+    category: "sweets",
+    priceLabel: "Rs 200/250g",
+  },
 ];
 
 const quantities = {};
-MENU_ITEMS.forEach(item => { quantities[item.id] = 0; });
+MENU_ITEMS.forEach((item) => {
+  quantities[item.id] = 0;
+});
 
 /* ════════════════════════════════════════════
    NAVBAR — Hamburger + Sticky + Active Links
    ════════════════════════════════════════════ */
 (function initNavbar() {
-  const navbar    = document.getElementById('navbar');
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
+  const navbar = document.getElementById("navbar");
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
   if (!navbar || !hamburger || !navLinks) return;
 
   /* Hamburger toggle */
-  hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', String(isOpen));
+  hamburger.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    hamburger.classList.toggle("open", isOpen);
+    hamburger.setAttribute("aria-expanded", String(isOpen));
   });
 
   /* Close menu when a link is clicked */
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+  navLinks.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
     });
   });
 
   /* Sticky: add .scrolled on scroll */
   function handleScroll() {
     if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
+      navbar.classList.add("scrolled");
     } else {
-      navbar.classList.remove('scrolled');
+      navbar.classList.remove("scrolled");
     }
     updateActiveLink();
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
 
   /* Active link highlight based on visible section */
   function updateActiveLink() {
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll("section[id]");
     const scrollPos = window.scrollY + 100;
-    let current = '';
+    let current = "";
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       if (section.offsetTop <= scrollPos) {
         current = section.id;
       }
     });
 
-    navLinks.querySelectorAll('.nav-link').forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
+    navLinks.querySelectorAll(".nav-link").forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
       }
     });
   }
@@ -83,14 +149,19 @@ MENU_ITEMS.forEach(item => { quantities[item.id] = 0; });
 /* ════════════════════════════════════════════
    SMOOTH SCROLL for all anchor links
    ════════════════════════════════════════════ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       e.preventDefault();
-      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 70;
-      const top  = target.getBoundingClientRect().top + window.scrollY - navH;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const navH =
+        parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--nav-h",
+          ),
+        ) || 70;
+      const top = target.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   });
 });
@@ -99,30 +170,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    INTERSECTION OBSERVER — fade-in on scroll
    ════════════════════════════════════════════ */
 (function initFadeIn() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+  );
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
 })();
 
 /* ════════════════════════════════════════════
    TYPEWRITER EFFECT — hero tagline
    ════════════════════════════════════════════ */
 (function initTypewriter() {
-  const target  = document.getElementById('heroTagline');
-  const cursor  = document.getElementById('typeCursor');
+  const target = document.getElementById("heroTagline");
+  const cursor = document.getElementById("typeCursor");
   if (!target || !cursor) return;
 
-  const text = 'Taste of Mithila, Heart of Kathmandu';
-  let index  = 0;
+  const text = "Taste of Mithila, Heart of Kathmandu";
+  let index = 0;
 
-  cursor.classList.add('cursor');
+  cursor.classList.add("cursor");
 
   function type() {
     if (index < text.length) {
@@ -142,31 +216,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    ANIMATED RATING COUNTER
    ════════════════════════════════════════════ */
 (function initRatingCounter() {
-  const el = document.getElementById('ratingNumber');
+  const el = document.getElementById("ratingNumber");
   if (!el) return;
 
-  const target   = 4.1;
+  const target = 4.1;
   const duration = 1500;
-  let startTime  = null;
+  let startTime = null;
 
-  function easeOutQuad(t) { return t * (2 - t); }
+  function easeOutQuad(t) {
+    return t * (2 - t);
+  }
 
   function animate(timestamp) {
     if (!startTime) startTime = timestamp;
-    const elapsed  = timestamp - startTime;
+    const elapsed = timestamp - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    const eased    = easeOutQuad(progress);
-    const current  = (eased * target).toFixed(1);
+    const eased = easeOutQuad(progress);
+    const current = (eased * target).toFixed(1);
     el.textContent = current;
 
     if (progress < 1) {
       requestAnimationFrame(animate);
     } else {
-      el.textContent = '4.1';
-      const badge = document.getElementById('ratingBadge');
+      el.textContent = "4.1";
+      const badge = document.getElementById("ratingBadge");
       if (badge) {
-        badge.classList.add('rating-pop');
-        badge.addEventListener('animationend', () => badge.classList.remove('rating-pop'), { once: true });
+        badge.classList.add("rating-pop");
+        badge.addEventListener(
+          "animationend",
+          () => badge.classList.remove("rating-pop"),
+          { once: true },
+        );
       }
     }
   }
@@ -179,35 +259,96 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    REVIEWS — data + carousel
    ════════════════════════════════════════════ */
 const REVIEWS = [
-  { name: 'Tekraj Shrestha',      initials: 'TS', stars: 5, badge: 'Local Guide', text: 'A nice place for tasty samosas, snacks, and sweets.' },
-  { name: 'Rinu Shah',            initials: 'RS', stars: 4, badge: 'Local Guide', text: 'Good food, especially Samosa, kachori and chaats. Great variety of sweets, fresh and delicious.' },
-  { name: 'chhabi Bhandari',      initials: 'CB', stars: 5, badge: 'Local Guide', text: 'Best samosa in town. Good place for Veggies. Sweets are also fresh.' },
-  { name: 'Siddhant S. Sainthwar',initials: 'SS', stars: 5, badge: 'Local Guide', text: 'My favourite is Samosa and Mitha Chutney. Delicious stuffs and co-operative staffs and the owner. Really loved it.' },
-  { name: 'Sam Dhi',              initials: 'SD', stars: 5, badge: 'Local Guide', text: 'Bomb samosa, easily best samosa in town. Good chutney as well.' },
-  { name: 'Ashish Jha',           initials: 'AJ', stars: 5, badge: 'Local Guide', text: 'Best Sweets & Snacks like Samosa, Kachori, Mithai and many more. Mithila Taste ❤️' },
-  { name: 'Shashwat Neupane',     initials: 'SN', stars: 5, badge: 'Local Guide', text: 'Rasmalai and samosa are extraordinarily good.' },
-  { name: 'ritesh joshi',         initials: 'RJ', stars: 5, badge: 'Local Guide', text: 'Best for samosa jalebi and samosa tarkari.' },
-  { name: 'Bee Namra',            initials: 'BN', stars: 4, badge: 'Regular',     text: 'Regular here. Price got hiked lately but taste is still good.' },
-  { name: 'Sumit Yadav (Mr. SKY)',initials: 'SY', stars: 5, badge: 'Verified',    text: 'In taste the best 😎' },
+  {
+    name: "Tekraj Shrestha",
+    initials: "TS",
+    stars: 5,
+    badge: "Local Guide",
+    text: "A nice place for tasty samosas, snacks, and sweets.",
+  },
+  {
+    name: "Rinu Shah",
+    initials: "RS",
+    stars: 4,
+    badge: "Local Guide",
+    text: "Good food, especially Samosa, kachori and chaats. Great variety of sweets, fresh and delicious.",
+  },
+  {
+    name: "chhabi Bhandari",
+    initials: "CB",
+    stars: 5,
+    badge: "Local Guide",
+    text: "Best samosa in town. Good place for Veggies. Sweets are also fresh.",
+  },
+  {
+    name: "Siddhant S. Sainthwar",
+    initials: "SS",
+    stars: 5,
+    badge: "Local Guide",
+    text: "My favourite is Samosa and Mitha Chutney. Delicious stuffs and co-operative staffs and the owner. Really loved it.",
+  },
+  {
+    name: "Sam Dhi",
+    initials: "SD",
+    stars: 5,
+    badge: "Local Guide",
+    text: "Bomb samosa, easily best samosa in town. Good chutney as well.",
+  },
+  {
+    name: "Ashish Jha",
+    initials: "AJ",
+    stars: 5,
+    badge: "Local Guide",
+    text: "Best Sweets & Snacks like Samosa, Kachori, Mithai and many more. Mithila Taste ❤️",
+  },
+  {
+    name: "Shashwat Neupane",
+    initials: "SN",
+    stars: 5,
+    badge: "Local Guide",
+    text: "Rasmalai and samosa are extraordinarily good.",
+  },
+  {
+    name: "ritesh joshi",
+    initials: "RJ",
+    stars: 5,
+    badge: "Local Guide",
+    text: "Best for samosa jalebi and samosa tarkari.",
+  },
+  {
+    name: "Bee Namra",
+    initials: "BN",
+    stars: 4,
+    badge: "Regular",
+    text: "Regular here. Price got hiked lately but taste is still good.",
+  },
+  {
+    name: "Sumit Yadav (Mr. SKY)",
+    initials: "SY",
+    stars: 5,
+    badge: "Verified",
+    text: "In taste the best 😎",
+  },
 ];
 
 (function initCarousel() {
-  const track     = document.getElementById('reviewTrack');
-  const dotsWrap  = document.getElementById('carouselDots');
-  const prevBtn   = document.getElementById('prevBtn');
-  const nextBtn   = document.getElementById('nextBtn');
-  const wrapper   = document.getElementById('reviewCarouselWrapper');
+  const track = document.getElementById("reviewTrack");
+  const dotsWrap = document.getElementById("carouselDots");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const wrapper = document.getElementById("reviewCarouselWrapper");
 
   if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
 
-  let current   = 0;
+  let current = 0;
   let autoTimer = null;
 
   /* Build cards */
-  REVIEWS.forEach(r => {
-    const stars = '⭐'.repeat(r.stars) + (r.stars < 5 ? '☆'.repeat(5 - r.stars) : '');
-    const card  = document.createElement('div');
-    card.className = 'review-card';
+  REVIEWS.forEach((r) => {
+    const stars =
+      "⭐".repeat(r.stars) + (r.stars < 5 ? "☆".repeat(5 - r.stars) : "");
+    const card = document.createElement("div");
+    card.className = "review-card";
     card.innerHTML = `
       <div class="review-stars">${stars}</div>
       <p class="review-text">${escapeHTML(r.text)}</p>
@@ -224,17 +365,22 @@ const REVIEWS = [
   /* Size all cards to wrapper width (pixel-based for correct translateX) */
   function sizeCards() {
     const w = wrapper.offsetWidth;
-    track.querySelectorAll('.review-card').forEach(c => { c.style.width = w + 'px'; });
+    track.querySelectorAll(".review-card").forEach((c) => {
+      c.style.width = w + "px";
+    });
   }
   sizeCards();
-  window.addEventListener('resize', () => { sizeCards(); goTo(current); });
+  window.addEventListener("resize", () => {
+    sizeCards();
+    goTo(current);
+  });
 
   /* Build dots */
   REVIEWS.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Review ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
+    const dot = document.createElement("button");
+    dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("aria-label", `Review ${i + 1}`);
+    dot.addEventListener("click", () => goTo(i));
     dotsWrap.appendChild(dot);
   });
 
@@ -243,31 +389,53 @@ const REVIEWS = [
     current = (index + REVIEWS.length) % REVIEWS.length;
     const cardW = wrapper.offsetWidth;
     track.style.transform = `translateX(${-current * cardW}px)`;
-    dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
+    dotsWrap.querySelectorAll(".carousel-dot").forEach((d, i) => {
+      d.classList.toggle("active", i === current);
     });
   }
 
-  function next() { goTo(current + 1); }
-  function prev() { goTo(current - 1); }
+  function next() {
+    goTo(current + 1);
+  }
+  function prev() {
+    goTo(current - 1);
+  }
 
-  nextBtn.addEventListener('click', () => { next(); resetAuto(); });
-  prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+  nextBtn.addEventListener("click", () => {
+    next();
+    resetAuto();
+  });
+  prevBtn.addEventListener("click", () => {
+    prev();
+    resetAuto();
+  });
 
-  function startAuto() { autoTimer = setInterval(next, 6000); }
-  function stopAuto()  { clearInterval(autoTimer); }
-  function resetAuto() { stopAuto(); startAuto(); }
+  function startAuto() {
+    autoTimer = setInterval(next, 6000);
+  }
+  function stopAuto() {
+    clearInterval(autoTimer);
+  }
+  function resetAuto() {
+    stopAuto();
+    startAuto();
+  }
 
   if (wrapper) {
-    wrapper.addEventListener('mouseenter', stopAuto);
-    wrapper.addEventListener('mouseleave', startAuto);
+    wrapper.addEventListener("mouseenter", stopAuto);
+    wrapper.addEventListener("mouseleave", startAuto);
   }
 
   startAuto();
 })();
 
 function escapeHTML(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 /* ════════════════════════════════════════════
@@ -276,17 +444,23 @@ function escapeHTML(str) {
 
 /* Render menu rows into the order panels */
 (function renderOrderMenu() {
-  const snacksContainer = document.getElementById('orderSnacks');
-  const sweetsContainer = document.getElementById('orderSweets');
+  const snacksContainer = document.getElementById("orderSnacks");
+  const sweetsContainer = document.getElementById("orderSweets");
   if (!snacksContainer || !sweetsContainer) return;
 
-  MENU_ITEMS.forEach(item => {
-    const container = item.category === 'snacks' ? snacksContainer : sweetsContainer;
-    const row = document.createElement('div');
-    row.className = 'menu-item-row';
-    row.id = 'row-' + item.id;
+  MENU_ITEMS.forEach((item) => {
+    const container =
+      item.category === "snacks" ? snacksContainer : sweetsContainer;
+    const row = document.createElement("div");
+    row.className = "menu-item-row";
+    row.id = "row-" + item.id;
     row.innerHTML = `
-      <span class="item-emoji">${item.emoji}</span>
+      ${
+        item.image
+          ? `<img src="${item.image}" alt="${escapeHTML(item.name)}" class="item-photo" loading="lazy" />`
+          : `<span class="item-emoji">${item.emoji}</span>`
+      }
+
       <span class="item-name">${escapeHTML(item.name)}</span>
       <span class="item-price">${escapeHTML(item.priceLabel)}</span>
       <div class="qty-controls">
@@ -303,34 +477,35 @@ function escapeHTML(str) {
 function addToOrderFromCard(itemId) {
   changeQty(itemId, 1);
   /* Smooth scroll to order section */
-  const orderSection = document.getElementById('order');
+  const orderSection = document.getElementById("order");
   if (orderSection) {
     const navH = 70;
-    const top  = orderSection.getBoundingClientRect().top + window.scrollY - navH;
-    window.scrollTo({ top, behavior: 'smooth' });
+    const top =
+      orderSection.getBoundingClientRect().top + window.scrollY - navH;
+    window.scrollTo({ top, behavior: "smooth" });
   }
 }
 
 /* +/− quantity change */
 function changeQty(itemId, delta) {
   const current = quantities[itemId] || 0;
-  const next    = Math.max(0, current + delta);
+  const next = Math.max(0, current + delta);
   quantities[itemId] = next;
 
   /* Update qty display */
-  const qtyEl = document.getElementById('qty-' + itemId);
+  const qtyEl = document.getElementById("qty-" + itemId);
   if (qtyEl) qtyEl.textContent = next;
 
   /* Update row subtotal */
-  const item   = MENU_ITEMS.find(i => i.id === itemId);
-  const subEl  = document.getElementById('sub-' + itemId);
+  const item = MENU_ITEMS.find((i) => i.id === itemId);
+  const subEl = document.getElementById("sub-" + itemId);
   if (subEl && item) {
-    subEl.textContent = next > 0 ? 'Rs ' + (next * item.price) : '';
+    subEl.textContent = next > 0 ? "Rs " + next * item.price : "";
   }
 
   /* Toggle active class on row */
-  const row = document.getElementById('row-' + itemId);
-  if (row) row.classList.toggle('active', next > 0);
+  const row = document.getElementById("row-" + itemId);
+  if (row) row.classList.toggle("active", next > 0);
 
   /* Re-render receipt */
   renderReceipt();
@@ -338,25 +513,26 @@ function changeQty(itemId, delta) {
 
 /* Re-render the receipt panel */
 function renderReceipt() {
-  const linesEl    = document.getElementById('receiptLines');
-  const totalRowEl = document.getElementById('receiptTotalRow');
-  const totalEl    = document.getElementById('receiptTotal');
+  const linesEl = document.getElementById("receiptLines");
+  const totalRowEl = document.getElementById("receiptTotalRow");
+  const totalEl = document.getElementById("receiptTotal");
   if (!linesEl || !totalRowEl || !totalEl) return;
 
-  const activeItems = MENU_ITEMS.filter(i => quantities[i.id] > 0);
+  const activeItems = MENU_ITEMS.filter((i) => quantities[i.id] > 0);
 
   if (activeItems.length === 0) {
-    linesEl.innerHTML = '<div class="receipt-empty">Your order is empty. Add items from the menu! 🥟</div>';
-    totalRowEl.style.display = 'none';
+    linesEl.innerHTML =
+      '<div class="receipt-empty">Your order is empty. Add items from the menu! 🥟</div>';
+    totalRowEl.style.display = "none";
     return;
   }
 
-  let html = '';
+  let html = "";
   let total = 0;
 
-  activeItems.forEach(item => {
-    const qty    = quantities[item.id];
-    const sub    = qty * item.price;
+  activeItems.forEach((item) => {
+    const qty = quantities[item.id];
+    const sub = qty * item.price;
     total += sub;
     html += `
       <div class="receipt-line">
@@ -366,51 +542,58 @@ function renderReceipt() {
   });
 
   linesEl.innerHTML = html;
-  totalEl.textContent = 'Rs ' + total;
-  totalRowEl.style.display = 'block';
+  totalEl.textContent = "Rs " + total;
+  totalRowEl.style.display = "block";
 }
 
 /* WhatsApp order handler */
 function handleWhatsAppOrder() {
-  const btn           = document.getElementById('whatsappBtn');
-  const errorEl       = document.getElementById('orderError');
-  const nameInput     = document.getElementById('customerName');
-  const locationInput = document.getElementById('deliveryLocation');
-  const notesInput    = document.getElementById('specialInstructions');
+  const btn = document.getElementById("whatsappBtn");
+  const errorEl = document.getElementById("orderError");
+  const nameInput = document.getElementById("customerName");
+  const locationInput = document.getElementById("deliveryLocation");
+  const phoneInput = document.getElementById("customerPhone");
+  const notesInput = document.getElementById("specialInstructions");
 
   if (!btn || !errorEl || !nameInput) return;
 
-  const name     = nameInput.value.trim();
-  const location = locationInput ? locationInput.value.trim() : '';
-  const notes    = notesInput ? notesInput.value.trim() : '';
-  const activeItems = MENU_ITEMS.filter(i => quantities[i.id] > 0);
+  const name = nameInput.value.trim();
+  const location = locationInput ? locationInput.value.trim() : "";
+  const notes = notesInput ? notesInput.value.trim() : "";
+  const phone = phoneInput ? phoneInput.value.trim() : "";
+  const activeItems = MENU_ITEMS.filter((i) => quantities[i.id] > 0);
 
   /* Validation */
   const missing = [];
-  if (activeItems.length === 0) missing.push('at least one item');
-  if (!name)                    missing.push('your name');
-  if (!location)                missing.push('your delivery location');
+  if (activeItems.length === 0) missing.push("at least one item");
+  if (!name) missing.push("your name");
+  if (!location) missing.push("your delivery location");
+  if (!phone) missing.push("your phone number");
 
   if (missing.length > 0) {
-    errorEl.textContent = `Please provide ${missing.join(', ')} to continue.`;
-    errorEl.style.display = 'block';
+    errorEl.textContent = `Please provide ${missing.join(", ")} to continue.`;
+    errorEl.style.display = "block";
 
     /* Shake the button */
-    btn.classList.remove('btn-shake');
+    btn.classList.remove("btn-shake");
     void btn.offsetWidth;
-    btn.classList.add('btn-shake');
-    btn.addEventListener('animationend', () => btn.classList.remove('btn-shake'), { once: true });
+    btn.classList.add("btn-shake");
+    btn.addEventListener(
+      "animationend",
+      () => btn.classList.remove("btn-shake"),
+      { once: true },
+    );
     return;
   }
 
   /* Clear error */
-  errorEl.style.display = 'none';
+  errorEl.style.display = "none";
 
   /* Build message */
   let total = 0;
-  let orderLines = '';
+  let orderLines = "";
 
-  activeItems.forEach(item => {
+  activeItems.forEach((item) => {
     const qty = quantities[item.id];
     const sub = qty * item.price;
     total += sub;
@@ -419,14 +602,19 @@ function handleWhatsAppOrder() {
 
   const message =
     `🛒 *New Order — Janakpur Sweets*\n\n` +
-    `👤 Name: ${name}\n\n` +
+    `👤 Name: ${name}\n` +
+    `📱 Phone: ${phone}\n\n` +
     `📍 Delivery Location: ${location}\n` +
     `_(Delivery charges will be applied based on distance)_\n\n` +
     `📋 Order Details:${orderLines}\n\n` +
     `💰 Food Total: Rs ${total}\n\n` +
-    `📝 Special Instructions: ${notes || 'None'}\n\n` +
+    `📝 Special Instructions: ${notes || "None"}\n\n` +
     `_(Sent from janakpursweets.com)_`;
 
   const encoded = encodeURIComponent(message);
-  window.open('https://wa.me/9779843588927?text=' + encoded, '_blank', 'noopener,noreferrer');
+  window.open(
+    "https://wa.me/9779843588927?text=" + encoded,
+    "_blank",
+    "noopener,noreferrer",
+  );
 }
