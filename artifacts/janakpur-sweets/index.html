@@ -44,7 +44,6 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#menu" class="nav-link">Menu</a></li>
-          <li><a href="#order" class="nav-link">Order</a></li>
           <li><a href="#reviews" class="nav-link">Reviews</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -95,7 +94,6 @@
               <span class="rating-number" id="ratingNumber">0.0</span>
               <span class="rating-label">/ 5 &nbsp;·&nbsp; 33 Reviews</span>
             </div>
-            <a href="#order" class="btn-primary hero-cta">Order Now 🛒</a>
           </div>
         </div>
 
@@ -242,9 +240,7 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 25</span>
-              <button class="btn-add" onclick="addToOrderFromCard('samosa')">
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
           <div class="menu-card fade-in">
@@ -258,9 +254,7 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 20</span>
-              <button class="btn-add" onclick="addToOrderFromCard('kachori')">
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
           <div class="menu-card fade-in">
@@ -274,9 +268,7 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 80</span>
-              <button class="btn-add" onclick="addToOrderFromCard('mixchaat')">
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
           <div class="menu-card fade-in">
@@ -290,9 +282,7 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 120</span>
-              <button class="btn-add" onclick="addToOrderFromCard('vegmomo')">
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
           <div class="menu-card fade-in">
@@ -306,30 +296,146 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 60</span>
-              <button
-                class="btn-add"
-                onclick="addToOrderFromCard('samosatarkari')"
-              >
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
+
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/jalebi.png" alt="Jalebi" />
+              <img src="public/dhokla.png" alt="Dhokla" />
             </div>
-            <h4 class="menu-card-name">Jalebi</h4>
+            <h4 class="menu-card-name">Dhokla</h4>
             <p class="menu-card-desc">
-              Crispy spirals soaked in saffron syrup — sweet, sticky, and
-              absolutely divine.
+              Dhokla is a steamed savory cake made with spiced gram flour
+              batter.
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 80 <small>/ 100g</small></span>
-              <button class="btn-add" onclick="addToOrderFromCard('jalebi')">
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/puritarkari.png" alt="Puri Tarkari" />
+            </div>
+            <h4 class="menu-card-name">Puri Tarkari</h4>
+            <p class="menu-card-desc">
+              Puri served with a rich, spiced gravy — a delightful combination
+              of crispy and flavorful.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/pavbhaji.png" alt="Pav Bhaji" />
+            </div>
+            <h4 class="menu-card-name">Pav Bhaji</h4>
+            <p class="menu-card-desc">
+              A hearty blend of vegetables in a spiced tomato-based sauce,
+              served with buttered pav.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/vadapav.png" alt="Vada Pav" />
+            </div>
+            <h4 class="menu-card-name">Vada Pav</h4>
+            <p class="menu-card-desc">
+              A popular street food consisting of a spicy potato fritter served
+              in a soft bun with chutneys.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/panipuri.png" alt="Pani Puri" />
+            </div>
+            <h4 class="menu-card-name">Pani Puri</h4>
+            <p class="menu-card-desc">
+              Crispy puris filled with spicy potato and served with a refreshing
+              minty drink.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/dhosa.png" alt="Dhosa" />
+            </div>
+            <h4 class="menu-card-name">Dhosa</h4>
+            <p class="menu-card-desc">
+              A traditional dish made from fermented rice and lentils, steamed
+              and served with chutneys and sambar.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/pizza.png" alt="pizza" />
+            </div>
+            <h4 class="menu-card-name">Pizza</h4>
+            <p class="menu-card-desc">
+              A delicious pizza topped with various ingredients and served hot.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/burger.png" alt="Burger" />
+            </div>
+            <h4 class="menu-card-name">Burger</h4>
+            <p class="menu-card-desc">
+              A delicious burger with a juicy patty, fresh vegetables, and
+              special sauce.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="see-all-wrap">
+          <button class="btn-see-all" onclick="toggleMenuGrid(this)">
+            <span>See All Items</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
         </div>
 
         <h3 class="menu-category-title fade-in" style="margin-top: 3.5rem">
@@ -347,11 +453,100 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 60 <small>/ piece</small></span>
-              <button class="btn-add" onclick="addToOrderFromCard('rasmalai')">
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/rasbari.png" alt="Rasbari" />
+            </div>
+            <h4 class="menu-card-name">Rasbari</h4>
+            <p class="menu-card-desc">
+              Soft cottage cheese patties soaked in light, fragrant sugar syrup.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/barfi.png" alt="Barfi" />
+            </div>
+            <h4 class="menu-card-name">Barfi</h4>
+            <p class="menu-card-desc">
+              A rich, fudgy sweet made from condensed milk and sugar, often
+              flavored with cardamom or nuts.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/rajbhog.png" alt="Rajbhog" />
+            </div>
+            <h4 class="menu-card-name">Rajbhog</h4>
+            <p class="menu-card-desc">
+              A royal Bengali delicacy! Spongy, saffron-infused cottage cheese
+              dumplings generously stuffed with a rich mixture of dry fruits,
+              cardamom, and simmered in a light, sweet sugar syrup
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/jalebi.png" alt="Jalebi" />
+            </div>
+            <h4 class="menu-card-name">Jalebi</h4>
+            <p class="menu-card-desc">
+              Crispy spirals soaked in saffron syrup — sweet, sticky, and
+              absolutely divine.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 80 <small>/ 100g</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/lalmohan.png" alt="Lal Mohan" />
+            </div>
+            <h4 class="menu-card-name">Lal Mohan</h4>
+            <p class="menu-card-desc">
+              milk-based dessert made from deep-fried dough balls soaked in a
+              sweet, sticky sugar syrup.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in">
+            <div class="menu-card-emoji">
+              <img src="public/chumchum.png" alt="Chumchum" />
+            </div>
+            <h4 class="menu-card-name">Chumchum</h4>
+            <p class="menu-card-desc">
+              Bengali sweet made by curdling milk and then shaping the
+              coagulated solids to cylindrical shape pieces.
+            </p>
+            <div class="menu-card-footer">
+              <span class="menu-price">Rs 60 <small>/ piece</small></span>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
+            </div>
+          </div>
+
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
               <img src="public/mithaiassortment.png" alt="Mithai Assortment" />
@@ -363,153 +558,27 @@
             </p>
             <div class="menu-card-footer">
               <span class="menu-price">Rs 200 <small>/ 250g</small></span>
-              <button
-                class="btn-add"
-                onclick="addToOrderFromCard('mithaiassortment')"
-              >
-                Add to Order
-              </button>
+              <span class="delivery-badge">🛵 Order via delivery app</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ══════════════════════════════ ORDER ══ -->
-    <section class="section order-section" id="order">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-tag">Order Online</span>
-          <h2 class="section-title">Build Your Order</h2>
-          <div class="section-divider"></div>
-          <p class="section-sub">
-            Select items, fill your details, and we'll connect you on WhatsApp!
-          </p>
-        </div>
-
-        <div class="order-layout">
-          <!-- Left: Menu Selection Panel -->
-          <div class="menu-panel fade-in">
-            <h3 class="panel-heading">🛒 Build Your Order</h3>
-
-            <div class="order-category">
-              <div class="order-category-label">
-                🥟 Snacks &amp; Street Food
-              </div>
-              <div id="orderSnacks" class="order-items-list"></div>
-            </div>
-
-            <div class="order-category">
-              <div class="order-category-label">
-                🍮 Traditional Sweets (Mithai)
-              </div>
-              <div id="orderSweets" class="order-items-list"></div>
-            </div>
-          </div>
-
-          <!-- Right: Receipt Panel -->
-          <div class="receipt-panel fade-in">
-            <div class="receipt-header">
-              <div class="receipt-shop-name">JANAKPUR SWEETS</div>
-              <div class="receipt-shop-addr">
-                Baneshwor, Kathmandu · 984-3588927
-              </div>
-              <div class="receipt-dashes"></div>
-            </div>
-
-            <h3 class="panel-heading">🧾 Your Receipt</h3>
-            <div class="receipt-lines" id="receiptLines">
-              <div class="receipt-empty">
-                Your order is empty. Add items from the menu! 🥟
-              </div>
-            </div>
-            <div
-              class="receipt-total-row"
-              id="receiptTotalRow"
-              style="display: none"
+        <div class="see-all-wrap">
+          <button class="btn-see-all" onclick="toggleMenuGrid(this)">
+            <span>See All Items</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <div class="receipt-dashes"></div>
-              <div class="receipt-total-line">
-                <span>TOTAL</span>
-                <span id="receiptTotal">Rs 0</span>
-              </div>
-            </div>
-            <div class="delivery-note">
-              🚴 Delivery charges will be applied based on distance
-            </div>
-
-            <div class="receipt-dashes" style="margin-top: 1.5rem"></div>
-
-            <div class="order-form">
-              <div class="form-group">
-                <label class="form-label" for="customerName"
-                  >Your Name <span class="required">*</span></label
-                >
-                <input
-                  type="text"
-                  id="customerName"
-                  class="form-input"
-                  placeholder="e.g. Ramesh Shrestha"
-                  autocomplete="name"
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="deliveryLocation"
-                  >Delivery Location <span class="required">*</span></label
-                >
-                <input
-                  type="text"
-                  id="deliveryLocation"
-                  class="form-input"
-                  placeholder="e.g. Koteshwor, near Pragati School"
-                  autocomplete="street-address"
-                />
-                <p class="field-hint">
-                  📍 Delivery charges will be applied based on distance from
-                  Baneshwor.
-                </p>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="customerPhone"
-                  >Your Phone Number <span class="required">*</span></label
-                >
-                <input
-                  type="tel"
-                  id="customerPhone"
-                  class="form-input"
-                  placeholder="e.g. 9841234567"
-                  autocomplete="tel"
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="specialInstructions"
-                  >Special Instructions
-                  <span class="optional">(optional)</span></label
-                >
-                <textarea
-                  id="specialInstructions"
-                  class="form-textarea"
-                  placeholder="Any special requests? (e.g. extra chutney, less spicy)"
-                  rows="3"
-                ></textarea>
-              </div>
-              <div
-                id="orderError"
-                class="order-error"
-                style="display: none"
-              ></div>
-              <button
-                class="whatsapp-btn"
-                id="whatsappBtn"
-                onclick="handleWhatsAppOrder()"
-              >
-                📲 Order via WhatsApp
-              </button>
-              <p class="whatsapp-note">
-                You'll be redirected to WhatsApp to confirm your order.
-              </p>
-            </div>
-          </div>
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -747,11 +816,48 @@
             <ul class="footer-links">
               <li><a href="#home">Home</a></li>
               <li><a href="#menu">Menu</a></li>
-              <li><a href="#order">Order</a></li>
               <li><a href="#reviews">Reviews</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4 class="footer-col-title">Order Online</h4>
+            <p class="footer-delivery-note">
+              Find us on your favourite delivery app
+            </p>
+            <div class="footer-delivery-apps">
+              <a
+                href="https://foodmandu.com"
+                target="_blank"
+                rel="noopener"
+                class="delivery-app-btn foodmandu-btn"
+                aria-label="Order on Foodmandu"
+              >
+                <img
+                  src="https://foodmandu.com/favicon.ico"
+                  alt=""
+                  class="delivery-app-icon"
+                  onerror="this.style.display = 'none'"
+                />
+                <span>Foodmandu</span>
+              </a>
+              <a
+                href="https://food.pathao.com"
+                target="_blank"
+                rel="noopener"
+                class="delivery-app-btn pathao-btn"
+                aria-label="Order on Pathao Food"
+              >
+                <img
+                  src="https://food.pathao.com/favicon.ico"
+                  alt=""
+                  class="delivery-app-icon"
+                  onerror="this.style.display = 'none'"
+                />
+                <span>Pathao Foods</span>
+              </a>
+            </div>
           </div>
           <div class="footer-links-col">
             <h4 class="footer-col-title">Contact</h4>

@@ -62,10 +62,127 @@ const MENU_ITEMS = [
     priceLabel: "Rs 80/100g",
   },
   {
+    id: "dhokla",
+    name: "Dhokla",
+    emoji: "🧽",
+    image: "public/dhokla.png",
+    price: 80,
+    category: "snacks",
+    priceLabel: "Rs 80/100g",
+  },
+  {
+    id: "puritarkari",
+    name: "Puri Tarkari",
+    emoji: "🍛",
+    image: "public/puritarkari.png",
+    price: 60,
+    category: "snacks",
+    priceLabel: "Rs 60",
+  },
+  {
+    id: "pavbhaji",
+    name: "Pav Bhaji",
+    emoji: "🍞",
+    image: "public/pavbhaji.png",
+    price: 100,
+    category: "snacks",
+    priceLabel: "Rs 100",
+  },
+  {
+    id: "vadapav",
+    name: "Vada Pav",
+    emoji: "🍔",
+    image: "public/vadapav.png",
+    price: 60,
+    category: "snacks",
+    priceLabel: "Rs 60",
+  },
+  {
+    id: "panipuri",
+    name: "Panipuri",
+    image: "public/panipuri.png",
+    price: 60,
+    category: "snacks",
+    priceLabel: "Rs 60/6pcs",
+  },
+  {
+    id: "dhosa",
+    name: "Dhosa",
+    emoji: "🥞",
+    image: "public/dhosa.png",
+    price: 120,
+    category: "snacks",
+    priceLabel: "Rs 120",
+  },
+  {
+    id: "pizza",
+    name: "Pizza",
+    emoji: "🍕",
+    image: "public/pizza.png",
+    price: 150,
+    category: "snacks",
+    priceLabel: "Rs 150/6 inch",
+  },
+
+  {
+    id: "burger",
+    name: "Burger",
+    emoji: "🍔",
+    image: "public/burger.png",
+    price: 60,
+    category: "snacks",
+    priceLabel: "Rs 60/pc",
+  },
+  {
     id: "rasmalai",
     name: "Rasmalai",
     emoji: "🍮",
     image: "public/rasmalai.png",
+    price: 60,
+    category: "sweets",
+    priceLabel: "Rs 60/pc",
+  },
+  {
+    id: "rasbari",
+    name: "Rasbari",
+    emoji: "🍬",
+    image: "public/rasbari.png",
+    price: 60,
+    category: "sweets",
+    priceLabel: "Rs 60/pc",
+  },
+  {
+    id: "barfi",
+    name: "Barfi",
+    emoji: "🍫",
+    image: "public/barfi.png",
+    price: 80,
+    category: "sweets",
+    priceLabel: "Rs 80/100g",
+  },
+  {
+    id: "rajbhog",
+    name: "Rajbhog",
+    emoji: "🍥",
+    image: "public/rajbhog.png",
+    price: 80,
+    category: "sweets",
+    priceLabel: "Rs 80/pc",
+  },
+  {
+    id: "lalmohan",
+    name: "Lal Mohan",
+    emoji: "🍩",
+    image: "public/lalmohan.png",
+    price: 60,
+    category: "sweets",
+    priceLabel: "Rs 60/pc",
+  },
+  {
+    id: "chumchum",
+    name: "Chum Chum",
+    emoji: "🍡",
+    image: "public/chumchum.png",
     price: 60,
     category: "sweets",
     priceLabel: "Rs 60/pc",
@@ -81,10 +198,29 @@ const MENU_ITEMS = [
   },
 ];
 
-const quantities = {};
-MENU_ITEMS.forEach((item) => {
-  quantities[item.id] = 0;
-});
+function toggleMenuGrid(btn) {
+  const wrap = btn.closest(".see-all-wrap");
+  const grid = wrap.previousElementSibling;
+  if (!grid || !grid.classList.contains("menu-grid")) return;
+
+  const wasExpanded = grid.classList.contains("expanded");
+
+  if (wasExpanded) {
+    const title = grid.previousElementSibling;
+    if (title) {
+      const navH = 80;
+      const scrollTarget =
+        title.getBoundingClientRect().top + window.scrollY - navH;
+      grid.classList.remove("expanded");
+      btn.classList.remove("expanded");
+      window.scrollTo({ top: scrollTarget, behavior: "instant" });
+    }
+    return;
+  }
+
+  grid.classList.add("expanded");
+  btn.classList.add("expanded");
+}
 
 /* ════════════════════════════════════════════
    NAVBAR — Hamburger + Sticky + Active Links
@@ -436,185 +572,4 @@ function escapeHTML(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
-}
-
-/* ════════════════════════════════════════════
-   ORDER SYSTEM
-   ════════════════════════════════════════════ */
-
-/* Render menu rows into the order panels */
-(function renderOrderMenu() {
-  const snacksContainer = document.getElementById("orderSnacks");
-  const sweetsContainer = document.getElementById("orderSweets");
-  if (!snacksContainer || !sweetsContainer) return;
-
-  MENU_ITEMS.forEach((item) => {
-    const container =
-      item.category === "snacks" ? snacksContainer : sweetsContainer;
-    const row = document.createElement("div");
-    row.className = "menu-item-row";
-    row.id = "row-" + item.id;
-    row.innerHTML = `
-      ${
-        item.image
-          ? `<img src="${item.image}" alt="${escapeHTML(item.name)}" class="item-photo" loading="lazy" />`
-          : `<span class="item-emoji">${item.emoji}</span>`
-      }
-
-      <span class="item-name">${escapeHTML(item.name)}</span>
-      <span class="item-price">${escapeHTML(item.priceLabel)}</span>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="changeQty('${item.id}', -1)" aria-label="Decrease quantity">−</button>
-        <span class="qty-display" id="qty-${item.id}">0</span>
-        <button class="qty-btn" onclick="changeQty('${item.id}', 1)" aria-label="Increase quantity">+</button>
-      </div>
-      <span class="item-subtotal" id="sub-${item.id}"></span>`;
-    container.appendChild(row);
-  });
-})();
-
-/* Called from menu-section "Add to Order" buttons */
-function addToOrderFromCard(itemId) {
-  changeQty(itemId, 1);
-  /* Smooth scroll to order section */
-  const orderSection = document.getElementById("order");
-  if (orderSection) {
-    const navH = 70;
-    const top =
-      orderSection.getBoundingClientRect().top + window.scrollY - navH;
-    window.scrollTo({ top, behavior: "smooth" });
-  }
-}
-
-/* +/− quantity change */
-function changeQty(itemId, delta) {
-  const current = quantities[itemId] || 0;
-  const next = Math.max(0, current + delta);
-  quantities[itemId] = next;
-
-  /* Update qty display */
-  const qtyEl = document.getElementById("qty-" + itemId);
-  if (qtyEl) qtyEl.textContent = next;
-
-  /* Update row subtotal */
-  const item = MENU_ITEMS.find((i) => i.id === itemId);
-  const subEl = document.getElementById("sub-" + itemId);
-  if (subEl && item) {
-    subEl.textContent = next > 0 ? "Rs " + next * item.price : "";
-  }
-
-  /* Toggle active class on row */
-  const row = document.getElementById("row-" + itemId);
-  if (row) row.classList.toggle("active", next > 0);
-
-  /* Re-render receipt */
-  renderReceipt();
-}
-
-/* Re-render the receipt panel */
-function renderReceipt() {
-  const linesEl = document.getElementById("receiptLines");
-  const totalRowEl = document.getElementById("receiptTotalRow");
-  const totalEl = document.getElementById("receiptTotal");
-  if (!linesEl || !totalRowEl || !totalEl) return;
-
-  const activeItems = MENU_ITEMS.filter((i) => quantities[i.id] > 0);
-
-  if (activeItems.length === 0) {
-    linesEl.innerHTML =
-      '<div class="receipt-empty">Your order is empty. Add items from the menu! 🥟</div>';
-    totalRowEl.style.display = "none";
-    return;
-  }
-
-  let html = "";
-  let total = 0;
-
-  activeItems.forEach((item) => {
-    const qty = quantities[item.id];
-    const sub = qty * item.price;
-    total += sub;
-    html += `
-      <div class="receipt-line">
-        <span class="receipt-line-name">${escapeHTML(item.name)} × ${qty}</span>
-        <span class="receipt-line-amount">Rs ${sub}</span>
-      </div>`;
-  });
-
-  linesEl.innerHTML = html;
-  totalEl.textContent = "Rs " + total;
-  totalRowEl.style.display = "block";
-}
-
-/* WhatsApp order handler */
-function handleWhatsAppOrder() {
-  const btn = document.getElementById("whatsappBtn");
-  const errorEl = document.getElementById("orderError");
-  const nameInput = document.getElementById("customerName");
-  const locationInput = document.getElementById("deliveryLocation");
-  const phoneInput = document.getElementById("customerPhone");
-  const notesInput = document.getElementById("specialInstructions");
-
-  if (!btn || !errorEl || !nameInput) return;
-
-  const name = nameInput.value.trim();
-  const location = locationInput ? locationInput.value.trim() : "";
-  const notes = notesInput ? notesInput.value.trim() : "";
-  const phone = phoneInput ? phoneInput.value.trim() : "";
-  const activeItems = MENU_ITEMS.filter((i) => quantities[i.id] > 0);
-
-  /* Validation */
-  const missing = [];
-  if (activeItems.length === 0) missing.push("at least one item");
-  if (!name) missing.push("your name");
-  if (!location) missing.push("your delivery location");
-  if (!phone) missing.push("your phone number");
-
-  if (missing.length > 0) {
-    errorEl.textContent = `Please provide ${missing.join(", ")} to continue.`;
-    errorEl.style.display = "block";
-
-    /* Shake the button */
-    btn.classList.remove("btn-shake");
-    void btn.offsetWidth;
-    btn.classList.add("btn-shake");
-    btn.addEventListener(
-      "animationend",
-      () => btn.classList.remove("btn-shake"),
-      { once: true },
-    );
-    return;
-  }
-
-  /* Clear error */
-  errorEl.style.display = "none";
-
-  /* Build message */
-  let total = 0;
-  let orderLines = "";
-
-  activeItems.forEach((item) => {
-    const qty = quantities[item.id];
-    const sub = qty * item.price;
-    total += sub;
-    orderLines += `\n• ${item.name} × ${qty} — Rs ${sub}`;
-  });
-
-  const message =
-    `🛒 *New Order — Janakpur Sweets*\n\n` +
-    `👤 Name: ${name}\n` +
-    `📱 Phone: ${phone}\n\n` +
-    `📍 Delivery Location: ${location}\n` +
-    `_(Delivery charges will be applied based on distance)_\n\n` +
-    `📋 Order Details:${orderLines}\n\n` +
-    `💰 Food Total: Rs ${total}\n\n` +
-    `📝 Special Instructions: ${notes || "None"}\n\n` +
-    `_(Sent from janakpursweets.com)_`;
-
-  const encoded = encodeURIComponent(message);
-  window.open(
-    "https://wa.me/9779843588927?text=" + encoded,
-    "_blank",
-    "noopener,noreferrer",
-  );
 }

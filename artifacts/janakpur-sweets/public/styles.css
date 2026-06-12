@@ -766,6 +766,56 @@ button {
   gap: 1.5rem;
 }
 
+/* Collapsed: hide cards after the 3rd */
+.menu-grid:not(.expanded) .menu-card:nth-child(n + 4) {
+  display: none;
+}
+
+.see-all-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btn-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-see-all:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-see-all svg {
+  transition: transform var(--transition);
+}
+
+.btn-see-all.expanded svg {
+  transform: rotate(180deg);
+}
+
+.btn-see-all.expanded span {
+  font-size: 0;
+}
+
+.btn-see-all.expanded span::before {
+  content: "Show Less";
+  font-size: 0.9rem;
+}
+
 .menu-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -1728,4 +1778,74 @@ button {
   object-fit: cover;
   border-radius: 16px;
   display: block;
+}
+
+/* ════════════════════════════════════════════
+   DELIVERY BADGE (replaces Add to Order btn)
+   ════════════════════════════════════════════ */
+.delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-light);
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  border-radius: 20px;
+  padding: 0.3rem 0.75rem;
+  white-space: nowrap;
+}
+
+/* ════════════════════════════════════════════
+   FOOTER — Delivery Apps
+   ════════════════════════════════════════════ */
+.footer-delivery-note {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 0.75rem;
+}
+
+.footer-delivery-apps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.delivery-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+  width: fit-content;
+}
+
+.delivery-app-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.delivery-app-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.foodmandu-btn {
+  background: #e8380d;
+  color: #fff;
+}
+
+.pathao-btn {
+  background: #7b2d8b;
+  color: #fff;
 }
