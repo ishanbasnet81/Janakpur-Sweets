@@ -16,10 +16,16 @@
       property="og:description"
       content="Fresh samosa, kachori, rasmalai and authentic Mithila mithai in Baneshwor, Kathmandu."
     />
+    <link rel="canonical" href="https://janakpursweets.netlify.app/" />
+    <meta property="og:url" content="https://janakpursweets.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://janakpursweets.netlify.app/public/logo.webp"
+    />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Janakpur Sweets – Taste of Mithila, Heart of Kathmandu</title>
-    <link rel="icon" type="image/png" href="public/logo.png" />
+    <link rel="icon" type="image/png" href="public/logo.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,6 +33,39 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="public/styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "Janakpur Sweets",
+        "description": "Authentic Mithila sweets, samosa, kachori, chaat and more in Baneshwor, Kathmandu.",
+        "url": "https://janakpursweets.netlify.app",
+        "telephone": "+9779843588927",
+        "servesCuisine": ["Mithila", "Nepali", "Indian Street Food"],
+        "priceRange": "Rs 25–200",
+        "openingHours": "Mo-Su 08:00-19:00",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "M8QP+44P, Baneshwor",
+          "addressLocality": "Kathmandu",
+          "postalCode": "44600",
+          "addressCountry": "NP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "27.6939",
+          "longitude": "85.3356"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.1",
+          "reviewCount": "33",
+          "bestRating": "5"
+        },
+        "hasMap": "https://maps.google.com/maps?q=Janakpur+Sweets+Baneshwor+Kathmandu"
+      }
+    </script>
   </head>
   <body>
     <!-- ══════════════════════════════ NAVBAR ══ -->
@@ -34,7 +73,7 @@
       <div class="nav-container">
         <a href="#home" class="nav-logo">
           <img
-            src="public/logo.png"
+            src="public/logo.webp"
             alt="Janakpur Sweets Logo"
             class="logo-img"
           />
@@ -168,7 +207,7 @@
           <!-- IMAGE — replaces the emoji -->
           <div class="about-image-block fade-in">
             <img
-              src="public/about-image.jpg"
+              src="public/about-image.webp"
               alt="Assorted Mithila sweets at Janakpur Sweets"
               class="about-image"
             />
@@ -231,7 +270,7 @@
         <div class="menu-grid">
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/samosa.png" alt="Samosa" />
+              <img src="public/samosa.webp" alt="Samosa" />
             </div>
             <div class="bestseller-badge">BESTSELLER</div>
             <h4 class="menu-card-name">Samosa</h4>
@@ -246,7 +285,7 @@
           </div>
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/kachori.png" alt="Kachori" />
+              <img src="public/kachori.webp" alt="Kachori" />
             </div>
             <h4 class="menu-card-name">Kachori</h4>
             <p class="menu-card-desc">
@@ -260,7 +299,7 @@
           </div>
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/chaat.png" alt="Mix Chaat" />
+              <img src="public/chaat.webp" alt="Mix Chaat" />
             </div>
             <h4 class="menu-card-name">Mix Chaat</h4>
             <p class="menu-card-desc">
@@ -274,7 +313,7 @@
           </div>
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/momo.png" alt="Veg Momo" />
+              <img src="public/momo.webp" alt="Veg Momo" />
             </div>
             <h4 class="menu-card-name">Veg Momo</h4>
             <p class="menu-card-desc">
@@ -288,7 +327,7 @@
           </div>
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/tarkari.png" alt="Samosa Tarkari" />
+              <img src="public/tarkari.webp" alt="Samosa Tarkari" />
             </div>
             <h4 class="menu-card-name">Samosa Tarkari</h4>
             <p class="menu-card-desc">
@@ -303,7 +342,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/dhokla.png" alt="Dhokla" />
+              <img src="public/dhokla.webp" alt="Dhokla" />
             </div>
             <h4 class="menu-card-name">Dhokla</h4>
             <p class="menu-card-desc">
@@ -318,7 +357,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/puritarkari.png" alt="Puri Tarkari" />
+              <img src="public/puritarkari.webp" alt="Puri Tarkari" />
             </div>
             <h4 class="menu-card-name">Puri Tarkari</h4>
             <p class="menu-card-desc">
@@ -333,7 +372,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/pavbhaji.png" alt="Pav Bhaji" />
+              <img src="public/pavbhaji.webp" alt="Pav Bhaji" />
             </div>
             <h4 class="menu-card-name">Pav Bhaji</h4>
             <p class="menu-card-desc">
@@ -348,7 +387,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/vadapav.png" alt="Vada Pav" />
+              <img src="public/vadapav.webp" alt="Vada Pav" />
             </div>
             <h4 class="menu-card-name">Vada Pav</h4>
             <p class="menu-card-desc">
@@ -363,7 +402,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/panipuri.png" alt="Pani Puri" />
+              <img src="public/panipuri.webp" alt="Pani Puri" />
             </div>
             <h4 class="menu-card-name">Pani Puri</h4>
             <p class="menu-card-desc">
@@ -378,7 +417,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/dhosa.png" alt="Dhosa" />
+              <img src="public/dhosa.webp" alt="Dhosa" />
             </div>
             <h4 class="menu-card-name">Dhosa</h4>
             <p class="menu-card-desc">
@@ -393,7 +432,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/pizza.png" alt="pizza" />
+              <img src="public/pizza.webp" alt="pizza" />
             </div>
             <h4 class="menu-card-name">Pizza</h4>
             <p class="menu-card-desc">
@@ -407,7 +446,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/burger.png" alt="Burger" />
+              <img src="public/burger.webp" alt="Burger" />
             </div>
             <h4 class="menu-card-name">Burger</h4>
             <p class="menu-card-desc">
@@ -445,7 +484,7 @@
         <div class="menu-grid">
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/rasmalai.png" alt="Rasmalai" />
+              <img src="public/rasmalai.webp" alt="Rasmalai" />
             </div>
             <h4 class="menu-card-name">Rasmalai</h4>
             <p class="menu-card-desc">
@@ -460,7 +499,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/rasbari.png" alt="Rasbari" />
+              <img src="public/rasbari.webp" alt="Rasbari" />
             </div>
             <h4 class="menu-card-name">Rasbari</h4>
             <p class="menu-card-desc">
@@ -474,7 +513,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/barfi.png" alt="Barfi" />
+              <img src="public/barfi.webp" alt="Barfi" />
             </div>
             <h4 class="menu-card-name">Barfi</h4>
             <p class="menu-card-desc">
@@ -489,7 +528,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/rajbhog.png" alt="Rajbhog" />
+              <img src="public/rajbhog.webp" alt="Rajbhog" />
             </div>
             <h4 class="menu-card-name">Rajbhog</h4>
             <p class="menu-card-desc">
@@ -505,7 +544,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/jalebi.png" alt="Jalebi" />
+              <img src="public/jalebi.webp" alt="Jalebi" />
             </div>
             <h4 class="menu-card-name">Jalebi</h4>
             <p class="menu-card-desc">
@@ -520,7 +559,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/lalmohan.png" alt="Lal Mohan" />
+              <img src="public/lalmohan.webp" alt="Lal Mohan" />
             </div>
             <h4 class="menu-card-name">Lal Mohan</h4>
             <p class="menu-card-desc">
@@ -535,7 +574,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/chumchum.png" alt="Chumchum" />
+              <img src="public/chumchum.webp" alt="Chumchum" />
             </div>
             <h4 class="menu-card-name">Chumchum</h4>
             <p class="menu-card-desc">
@@ -550,7 +589,7 @@
 
           <div class="menu-card fade-in">
             <div class="menu-card-emoji">
-              <img src="public/mithaiassortment.png" alt="Mithai Assortment" />
+              <img src="public/mithaiassortment.webp" alt="Mithai Assortment" />
             </div>
             <h4 class="menu-card-name">Mithai Assortment</h4>
             <p class="menu-card-desc">
@@ -837,7 +876,7 @@
               >
                 <img
                   src="https://foodmandu.com/favicon.ico"
-                  alt=""
+                  alt="Foodmandu"
                   class="delivery-app-icon"
                   onerror="this.style.display = 'none'"
                 />
@@ -852,7 +891,7 @@
               >
                 <img
                   src="https://food.pathao.com/favicon.ico"
-                  alt=""
+                  alt="Pathao Food"
                   class="delivery-app-icon"
                   onerror="this.style.display = 'none'"
                 />
