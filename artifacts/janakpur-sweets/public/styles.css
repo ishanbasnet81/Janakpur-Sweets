@@ -247,7 +247,7 @@ button {
       rgba(0, 0, 0, 0.35) 50%,
       rgba(0, 0, 0, 0.05) 100%
     ),
-    url("hero.jpg") center/cover no-repeat;
+    url("hero.webp") center/cover no-repeat;
   overflow: hidden;
   display: flex;
   flex-direction: column;
