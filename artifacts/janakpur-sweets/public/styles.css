@@ -102,15 +102,49 @@ button {
   height: var(--nav-h);
   transition:
     background var(--transition),
-    box-shadow var(--transition),
-    backdrop-filter var(--transition);
+    box-shadow var(--transition);
+  background: transparent;
 }
 
 .navbar.scrolled {
-  background: rgba(255, 248, 240, 0.92);
+  background: rgba(255, 248, 240, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 24px rgba(93, 58, 26, 0.12);
+}
+
+/* White links only on desktop when over hero */
+@media (min-width: 769px) {
+  .navbar:not(.scrolled) .nav-link {
+    color: white;
+  }
+  .navbar:not(.scrolled) .logo-text {
+    color: white;
+  }
+  .navbar:not(.scrolled) .logo-accent {
+    color: var(--cream);
+  }
+  .navbar:not(.scrolled) .hamburger-line {
+    background: white;
+  }
+}
+
+/* Mobile nav links always dark */
+@media (max-width: 768px) {
+  .nav-links .nav-link {
+    color: var(--dark) !important;
+  }
+}
+
+/* Dark when scrolled */
+.navbar.scrolled .nav-link {
+  color: var(--dark);
+}
+.navbar.scrolled .logo-text {
+  color: var(--dark);
+}
+.navbar.scrolled .logo-accent {
+  color: var(--secondary);
 }
 
 .nav-container {
@@ -206,13 +240,14 @@ button {
 .hero {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #f4a20a 0%,
-    #e67e22 35%,
-    #c0392b 70%,
-    #922b21 100%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.05) 100%
+    ),
+    url("hero.jpg") center/cover no-repeat;
   overflow: hidden;
   display: flex;
   flex-direction: column;
