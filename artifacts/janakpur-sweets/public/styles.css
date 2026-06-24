@@ -894,6 +894,13 @@ button {
   background: var(--white);
 }
 
+.map-branch-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
